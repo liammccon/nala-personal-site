@@ -1,1 +1,11 @@
+:root {
+    --bg-light: #F9F3DC;
+    --dark: #1C1513;
+    --accent-light: #6BA28A;
+    --accent-dark: #574C61;
+    --grey: #686A65;
+  }
 
+  body {
+    background-color: var(--bg-light);
+  }
