@@ -9,3 +9,28 @@
   body {
     background-color: var(--bg-light);
   }
+
+  .ltm-title-section {
+    margin-top: 0px;
+    padding-top: 0px;
+    height: 60vw; /*About the height of the background photo*/
+  }
+
+  .ltm-title-img {
+    position: absolute; 
+    width: 100vw;
+    z-index: -1;
+  }
+
+  .ltm-title {
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 14vw;
+    text-shadow: .3vw .5vw 0px #F9F3DC;
+  }
+
+
+  p {
+    font-family: 'Lato', sans-serif;
+  }
