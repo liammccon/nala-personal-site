@@ -56,7 +56,6 @@ p,h1 {
     font-size: 18px;
     transition: font-size .2s;
     color: var(--grey);
-
 }
 
 .nav-item:hover{
