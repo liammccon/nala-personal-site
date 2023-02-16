@@ -1,7 +1,7 @@
 :root {
     --bg-light: #F9F3DC;
     --dark: #1C1513;
-    --accent-light: #6BA28A;
+    --accent-light: #005631;
     --accent-dark: #574C61;
     --grey: #686A65;
   }
@@ -34,3 +34,21 @@
   p,h1 {
     font-family: 'Lato', sans-serif;
   }
+
+  .ltm-nav {
+
+  }
+
+.ltm-nav-link {
+    font-size: 18px;
+    text-decoration: none;
+    color: var(--grey) !important;
+}
+
+.nav-item {
+    list-style-type: none;
+}
+
+.ltm-nav-link:hover {
+    color: var(--accent-light) !important;
+}
