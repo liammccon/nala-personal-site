@@ -8,7 +8,10 @@
 
     <!--Bootstrap 5 CSS CDN--> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     
+    <!--My JS and CSS-->
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+
 
     <!--Google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -84,9 +87,25 @@
                 </div>
 
                 <!--Quiz-->
-                <div class="ltm-quiz" id="quiz">
+                <div class="ltm-quiz-section mt-4" id="quiz">
                     <h1>Quiz</h1>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium consectetur quasi earum eius non eos ducimus mollitia illum, temporibus corporis repudiandae ut quae distinctio! Id libero doloribus, perspiciatis quasi, eligendi ut, cumque commodi perferendis doloremque tempore eaque. Sed, iste corrupti.</p>    
+                    <div class="d-grid gap-2 pt-2 pb-2 ps-5 pe-5">
+                        <button class="btn btn-secondary">Begin!</button>
+                    </div>
+
+                    <div class="ltm-quiz d-none">
+                        <p class="question">Question 1: What is my full name?</p>
+                        <div class="d-grid gap-2 p-2">
+                            <button type="button" class="btn btn-outline-secondary ltm-btn ltm-btn-1">Nala M'lady Nestor-Cuevas</button>
+                            <button type="button" class="btn btn-outline-secondary ltm-btn ltm-btn-2">Nala Schmala Bo Bala</button>
+                            <button type="button" class="btn btn-outline-secondary ltm-btn ltm-btn-2">Nala Lalalala La</button>
+                            <button type="button" class="btn btn-outline-secondary ltm-btn ltm-btn-2">Cat</button>
+                        </div>
+    
+                        <h4 class="feedback text-center mt-2 mb-3 text-success d-none">Correct!</h4>
+                        <h4 class="feedback text-center mt-2 mb-3 text-danger d-none">Wrong!</h4>
+                    </div>
+                    
                 </div>
 
                 <!--Contact-->
@@ -127,5 +146,6 @@
 
     </div>
     <!--Bootstrap 5 JS CDN link--> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!--JQuery CDN--><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
