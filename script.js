@@ -54,14 +54,16 @@ $(document).ready(function() {
     }
 
     //Return the currrent question object to display
-    function getCurrentQuestion {
-        switch (currentQuestion){
-            case 1:
-                return questions.q1;
-            case 2:
-                return questions.q2;
+    function getCurrentQuestion() {
+        switch (currentQuestion) {
+          case 1:
+            return questions.q1;
+          case 2:
+            return questions.q2;
+          default:
+            return null;
         }
-    }
+      }
 
     
 
