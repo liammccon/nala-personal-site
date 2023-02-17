@@ -83,8 +83,10 @@ $(document).ready(function() {
         chosenAnswerButton.removeClass('btn-outline-secondary');
         if (correct) {
             chosenAnswerButton.addClass('btn-success');
+            $('#correct').removeClass('d-none');
         } else {
             chosenAnswerButton.addClass('btn-danger');
+            $('#wrong').removeClass('d-none');
         }
         //Show the 'next question' button
         $('#next-button-div').removeClass("d-none");
