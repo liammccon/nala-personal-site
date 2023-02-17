@@ -10,35 +10,54 @@ $(document).ready(function() {
     
 
     beginQuizBtn.click(function() {
+        currentQuestion = 1;
+        populateQuiz();
+
         //Begin the Quiz
         $("#begin-div").addClass("d-none"); // Hide the begin button
         $('#quiz-questions').removeClass("d-none"); // Show the questions
 
-        currentQuestion = 1;
-        populateQuiz(1);
     });
 
     const questions = {
         q1: {
             question: "What is Nala's full name?",
-            a: "Nala M'Lady Nestor-Cuevas",
-            b: "Nala Schmala Bo Bala",
-            c: "Nala Lalalala La",
-            d: "Cat",
+            'a': "Nala M'Lady Nestor-Cuevas",
+            'b': "Nala Schmala Bo Bala",
+            'c': "Nala Lalalala La",
+            'd': "Cat",
             correct: "a"
         },
         q2: {
-            question: "Which is not incorrect?",
-            a: "False",
-            b: "Correct",
-            c: "False",
-            d: "False",
+            question: "Do I like snow?",
+            'a': "Yes",
+            'b': "No",
             correct: "b"
         }
     }
     
-    function populateQuiz(question){
-        
+    function populateQuiz(){
+        const question = getCurrentQuestion();
+
+        //Get the question p tag
+        const questionText = $('#question');
+        //Set its text to the question
+        questionText.text(question.question);
+
+        //Set the four choices
+        const choices = ['a', 'b', 'c', 'd'];
+        choices.forEach(function(choice) {
+            const choiceButton = $(`#${choice}`);
+            const choiceText = question[choice];
+            if (choiceText){
+                //If there is anything written for the question
+                choiceButton.text(choiceText);
+                choiceButton.removeClass("d-none");
+            } else {
+                //Hide choice
+                choiceButton.addClass("d-none");
+            }
+        });
     }
 
     //Clicked on an answer button for the question
@@ -50,6 +69,8 @@ $(document).ready(function() {
     
     function evaluateAnswer(answer){
         const chosenAnswer = $(`#${answer}`);
+        const question = getCurrentQuestion();
+
 
     }
 
@@ -64,10 +85,6 @@ $(document).ready(function() {
             return null;
         }
       }
-
-    
-
-    
 });
 
 
