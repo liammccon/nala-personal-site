@@ -6,19 +6,6 @@ $(document).ready(function() {
     let currentQuestion = 0; //The current question, 0 is before starting the quiz
     let numOfCorrectAnswers = 0;
 
-
-    
-
-    beginQuizBtn.click(function() {
-        currentQuestion = 1;
-        populateQuiz();
-
-        //Begin the Quiz
-        $("#begin-div").addClass("d-none"); // Hide the begin button
-        $('#quiz-questions').removeClass("d-none"); // Show the questions
-
-    });
-
     const questions = {
         q1: {
             question: "What is Nala's full name?",
@@ -35,7 +22,30 @@ $(document).ready(function() {
             correct: "b"
         }
     }
+
+
     
+
+    beginQuizBtn.click(function() {
+        currentQuestion = 1;
+        populateQuiz();
+
+        //Begin the Quiz
+        $("#begin-div").addClass("d-none"); // Hide the begin button
+        $('#quiz-questions').removeClass("d-none"); // Show the questions
+
+    });
+
+    //Clicked on an answer button for the question
+    quizAnswerBtn.click(function() {
+        //Evaluate if answer was correct
+        const choice = $(this).attr("id"); //ID can be a, b, c, or d.
+        evaluateAnswer(choice);
+    });
+
+    
+    
+    //Populate the question and answers for the current question
     function populateQuiz(){
         const question = getCurrentQuestion();
 
@@ -59,19 +69,25 @@ $(document).ready(function() {
             }
         });
     }
-
-    //Clicked on an answer button for the question
-    quizAnswerBtn.click(function() {
-        //Evaluate if answer was correct
-        const id = $(this).attr("id"); //ID can be a, b, c, or d.
-        evaluateAnswer(id);
-    });
     
-    function evaluateAnswer(answer){
-        const chosenAnswer = $(`#${answer}`);
+    function evaluateAnswer(choice){
+        //Gets the answer button from using choice as the ID of the question (a, b, c, or d)
+        const chosenAnswerButton = $(`#${choice}`);
         const question = getCurrentQuestion();
 
-
+        //Disable all answer buttons
+        quizAnswerBtn.prop('disabled', true);
+        //Determine if it was the correct answer
+        const correct = question.correct.toLowerCase() === choice.toLowerCase()
+        //Color the answer button accordingly and show success message
+        chosenAnswerButton.removeClass('btn-outline-secondary');
+        if (correct) {
+            chosenAnswerButton.addClass('btn-success');
+        } else {
+            chosenAnswerButton.addClass('btn-danger');
+        }
+        //Show the 'next question' button
+        $('#next-button-div').removeClass("d-none");
     }
 
     //Return the currrent question object to display

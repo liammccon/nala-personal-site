@@ -71,3 +71,9 @@ p,h1 {
     height: auto;
     margin-top: 15px;
 }
+
+#next-button {
+    background-color: var(--accent-dark);
+    border-color: var(--accent-dark);
+    margin: auto !important;
+}
