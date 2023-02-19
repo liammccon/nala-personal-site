@@ -31,8 +31,13 @@ body {
 }
 
 
-p,h1 {
+body {
     font-family: 'Lato', sans-serif;
+}
+
+
+.modal-img {
+    width: 100%;
 }
 
 .ltm-nav ul {

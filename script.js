@@ -33,9 +33,6 @@ $(document).ready(function() {
     }
     let numOfQuestions = Object.keys(questions).length;
 
-
-    
-
     beginQuizButton.click(function() {
         currentQuestion = 1;
         populateQuiz();
