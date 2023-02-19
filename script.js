@@ -1,46 +1,62 @@
 // Wait for the HTML document to finish loading before running any jQuery code
 $(document).ready(function() {
 
-    let beginQuizBtn = $('#begin'); //Button to begin quiz
-    let quizAnswerBtn = $('.quiz-btn'); //All four buttons with possible answers
+    let beginQuizButton = $('#begin'); //Button to begin quiz
+    let quizAnswerButton = $('.quiz-btn'); //All four buttons with possible answers
+    let nextButton = $('#next-button');
     let currentQuestion = 0; //The current question, 0 is before starting the quiz
     let numOfCorrectAnswers = 0;
 
     const questions = {
         q1: {
             question: "What is Nala's full name?",
-            'a': "Nala M'Lady Nestor-Cuevas",
-            'b': "Nala Schmala Bo Bala",
+            'a': "Nala Schmala Bo Bala",
+            'b': "Nala M'Lady Nestor-Cuevas",
             'c': "Nala Lalalala La",
             'd': "Cat",
-            correct: "a"
+            correct: "b"
         },
         q2: {
             question: "Do I like snow?",
             'a': "Yes",
             'b': "No",
-            correct: "b"
+            correct: "a"
         }
     }
+    let numOfQuestions = Object.keys(questions).length;
 
 
     
 
-    beginQuizBtn.click(function() {
+    beginQuizButton.click(function() {
         currentQuestion = 1;
         populateQuiz();
 
         //Begin the Quiz
         $("#begin-div").addClass("d-none"); // Hide the begin button
         $('#quiz-questions').removeClass("d-none"); // Show the questions
-
     });
 
     //Clicked on an answer button for the question
-    quizAnswerBtn.click(function() {
+    quizAnswerButton.click(function() {
         //Evaluate if answer was correct
         const choice = $(this).attr("id"); //ID can be a, b, c, or d.
         evaluateAnswer(choice);
+    });
+    nextButton.click(function() { 
+        currentQuestion++;
+
+        //Hide unecessary elements, enable buttons
+        quizAnswerButton.removeClass('btn-success');
+        quizAnswerButton.removeClass('btn-danger');
+        quizAnswerButton.addClass('btn-outline-secondary');
+        $('#correct').addClass('d-none');
+        $('#wrong').addClass('d-none');
+        $('#next-button-div').addClass("d-none");
+        quizAnswerButton.prop('disabled', false);
+
+        //Populate the quiz
+        populateQuiz();
     });
 
     
@@ -76,20 +92,24 @@ $(document).ready(function() {
         const question = getCurrentQuestion();
 
         //Disable all answer buttons
-        quizAnswerBtn.prop('disabled', true);
+        quizAnswerButton.prop('disabled', true);
         //Determine if it was the correct answer
         const correct = question.correct.toLowerCase() === choice.toLowerCase()
         //Color the answer button accordingly and show success message
         chosenAnswerButton.removeClass('btn-outline-secondary');
         if (correct) {
+            numOfCorrectAnswers++;
             chosenAnswerButton.addClass('btn-success');
             $('#correct').removeClass('d-none');
         } else {
             chosenAnswerButton.addClass('btn-danger');
             $('#wrong').removeClass('d-none');
         }
-        //Show the 'next question' button
-        $('#next-button-div').removeClass("d-none");
+        //Show the 'next question' button if more questions are available
+        if (currentQuestion < numOfQuestions)
+            $('#next-button-div').removeClass("d-none");
+        else
+            displayEndMessage();
     }
 
     //Return the currrent question object to display
@@ -102,6 +122,11 @@ $(document).ready(function() {
           default:
             return null;
         }
+      }
+
+      function displayEndMessage() {
+        $('#end-message').removeClass('d-none');
+        $('#end-message').text(`You got ${numOfCorrectAnswers}/${numOfQuestions} questions!`);
       }
 });
 
