@@ -21,7 +21,15 @@ $(document).ready(function() {
             'a': "Yes",
             'b': "No",
             correct: "a"
-        }
+        },
+        q3: {
+            question: "How old am I?",
+            'a': "6 days",
+            'b': "6 months",
+            'c': "1 year",
+            'd': "23 years",
+            correct: "c"
+        },
     }
     let numOfQuestions = Object.keys(questions).length;
 
@@ -114,14 +122,7 @@ $(document).ready(function() {
 
     //Return the currrent question object to display
     function getCurrentQuestion() {
-        switch (currentQuestion) {
-          case 1:
-            return questions.q1;
-          case 2:
-            return questions.q2;
-          default:
-            return null;
-        }
+        return questions[`q${currentQuestion}`]
       }
 
       function displayEndMessage() {
