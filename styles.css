@@ -35,7 +35,7 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-.modal-img {
+#modal-img {
     height: 100%;
     width: 100%;
     display:block;
@@ -79,6 +79,7 @@ body {
     width: 20vw;
     height: auto;
     margin-top: 15px;
+    cursor: pointer;
 }
 
 #next-button {

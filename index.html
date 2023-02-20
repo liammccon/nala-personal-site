@@ -12,7 +12,8 @@
 
     <!--My JS and CSS-->
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script src="quiz.js"></script>
+    <script src="modal.js"></script>
 
 
     <!--Google fonts-->
@@ -29,19 +30,20 @@
     </div>
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">
         Launch demo modal
     </button>
     
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
+                    <h3 id="modal-title" class="modal-title fs-5" id="staticBackdropLabel">Nala walking in the snow</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img class="modal-img img-fluid" src="assets/photos/snow.jpeg"alt="Nala walking in the snow"/>
+                    <img id="modal-img" class="img-fluid" src="" alt=""/>
                 </div>
             </div>
         </div>
@@ -90,31 +92,31 @@
 
                     <div class="row row-cols-3">
                         <div class="col">
-                            <img class="ltm-photo" src="assets/photos/adopt.jpeg"alt="Nala gets adopted"/>
+                            <img id="img-1" class="ltm-photo" src="assets/photos/adopt.jpeg"alt="Nala gets adopted"/>
                         </div>
                         <div class="col">
-                            <img class="ltm-photo" src="assets/photos/close.jpeg"alt="Closeup of Nala"/>
+                            <img id="img-2" class="ltm-photo" src="assets/photos/close.jpeg"alt="Closeup of Nala"/>
                         </div>
                         <div class="col">
-                            <img class="ltm-photo" src="assets/photos/horse.png"alt="Nala on the couch"/>
+                            <img id="img-3" class="ltm-photo" src="assets/photos/horse.png"alt="Nala on the couch"/>
                         </div>
                         <div class="col">
-                            <img class="ltm-photo" src="assets/photos/counter.jpeg"alt="Nala on the counter"/>
+                            <img id="img-4" class="ltm-photo" src="assets/photos/counter.jpeg"alt="Nala on the counter"/>
                         </div>
                         <div class="col">
-                            <img class="ltm-photo" src="assets/photos/dont.jpeg"alt="Nala sitting precariously high"/>
+                            <img id="img-5" class="ltm-photo" src="assets/photos/dont.jpeg"alt="Nala sitting precariously high"/>
                         </div>
                         <div class="col">
-                            <img class="ltm-photo" src="assets/photos/hide.jpeg"alt="Nala hiding"/>
+                            <img id="img-6" class="ltm-photo" src="assets/photos/hide.jpeg"alt="Nala hiding"/>
                         </div>
                         <div class="col">
-                            <img class="ltm-photo" src="assets/photos/golden.jpeg"alt="Nala sleeping during golden hour"/>
+                            <img id="img-7" class="ltm-photo" src="assets/photos/golden.jpeg"alt="Nala sleeping during golden hour"/>
                         </div>
                         <div class="col">
-                            <img class="ltm-photo" src="assets/photos/snow.jpeg"alt="Nala walking in the snow"/>
+                            <img id="img-8" class="ltm-photo" src="assets/photos/snow.jpeg"alt="Nala walking in the snow"/>
                         </div>
                         <div class="col">
-                            <img class="ltm-photo" src="assets/photos/toof.jpeg"alt="Nala with her tooth stuck on her lip while sleeping"/>
+                            <img id="img-9" class="ltm-photo" src="assets/photos/toof.jpeg"alt="Nala with her tooth stuck on her lip while sleeping"/>
                         </div>
                         <div class="col">
                             
