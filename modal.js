@@ -16,10 +16,7 @@ $(document).ready(function() {
         const titleText = clickedImage.attr('alt');
         $("#modal-title").text(titleText);
         $("#modal-img").attr('alt', titleText);
-
         
-        // Trigger the desired Bootstrap event (e.g. modal, dropdown, etc.)
-        // Here's an example of triggering a modal
         $('#modal').modal('show');
 
     });
