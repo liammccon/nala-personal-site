@@ -43,6 +43,12 @@ body {
     max-height: 80vw;
     max-width: 80vh;
 }
+.modal-content {
+    background-color: var(--bg-light);
+}
+.modal-header {
+    border-bottom: none;
+}
 
 .ltm-nav ul {
     border-left: 2px solid var(--grey);
