@@ -55,6 +55,7 @@ h1 {
 }
 .modal-content {
     background-color: var(--bg-light);
+    border-radius: 2%;
 }
 .modal-header {
     border-bottom: none;
@@ -96,6 +97,10 @@ h1 {
     height: auto;
     margin-top: 15px;
     cursor: pointer;
+}
+
+.ltm-photo,#modal-img {
+    border-radius: 2%;
 }
 
 #next-button {

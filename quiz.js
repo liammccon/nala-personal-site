@@ -9,7 +9,7 @@ $(document).ready(function() {
 
     const questions = {
         q1: {
-            question: "What is Nala's full name?",
+            question: "What is my full name?",
             'a': "Nala Schmala Bo Bala",
             'b': "Nala M'Lady Nestor-Cuevas",
             'c': "Nala Lalalala La",
