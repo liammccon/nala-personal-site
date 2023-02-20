@@ -107,3 +107,12 @@ h1 {
 .form-control {
     background-color: #f7f6ef;
 }
+
+.invalid {
+    border: 1px solid rgb(204, 22, 22);
+}
+.invalid-message {
+    color:rgb(204, 22, 22);
+    margin-top: .3em;
+    font-size: smaller;
+}
